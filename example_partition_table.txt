@@ -1,0 +1,11 @@
+Model: SanDisk Cruzer Blade (scsi)
+Disk /dev/sdc: 31.5GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system  Name    Flags
+ 1      1049kB  3146kB  2097kB               grub    bios_grub
+ 2      3146kB  674MB   671MB   fat32        boot    boot, esp
+ 3      674MB   31.5GB  30.8GB  ext2         rootfs
+
