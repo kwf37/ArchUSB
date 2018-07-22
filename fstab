@@ -1,0 +1,12 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sdc3
+UUID=1561b724-0118-4601-8c04-10c620e78933	/         	ext4      	rw,noatime,block_validity,delalloc,nojournal_checksum,barrier,user_xattr,acl	0 1
+
+# /dev/sdc2
+UUID=6249-2B89      	/boot 	vfat      	rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro	0 2
+
+# /dev/sdc1
+UUID=620D-8AFB      	/boot/efi 	vfat      	rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro	0 2
