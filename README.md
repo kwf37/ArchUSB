@@ -78,7 +78,8 @@ Now we can prepare to install arch. If you are not on arch linux, then you will 
 	The above command is a script that automates a lot of the mounting required to setup a chroot environment, and automatically calls   chroot for you. If for some reason this doesn’t work, please refer to the alternate options in the above "Install from existing Linux" page.
 6. Run `pacman-key --init`
 7. Run `pacman-key --populate archlinux`
-8. Install any useful tools using `pacman -S <package>`. I only installed `vi` as I already partitioned my drives by this point.
+8. Refresh all package lists by running `pacman -Syyu`.
+9. Install any useful tools using `pacman -S <package>`. I only installed `vi` as I already partitioned my drives by this point.
 
 The last few pacman commands should finish the setup for our arch boostrap environment. We can now move on to the actual installation.
 
@@ -94,7 +95,7 @@ In this part I simply followed the [Arch wiki installation page](https://wiki.ar
     mount /dev/sdc1 /mnt/boot/efi
     ```
     
-2. Double check that the `/etc/pacman.d/mirrorlist` file is set correctly, and then run `pacstrap /mnt base`. This effectively copies the `base` package group into the new filesystem rooted at `/mnt`, and it can be run with other packages as arguments. For example, if I also wanted to install the `base-devel` packagr group, I could run `pacstrap /mnt base base-devel`.
+2. Double check that the `/etc/pacman.d/mirrorlist` file is set correctly, and then run `pacstrap /mnt base`. This effectively copies the `base` package group into the new filesystem rooted at `/mnt`, and it can be run with other packages as arguments. For example, if I also wanted to install the `base-devel` packagr group, I could run `pacstrap /mnt base base-devel`. I **highly** recommend installing a network manager here, such as the `networkmanager` package or `wpa_supplicant`. Both of them have good pages on the wiki, and you will not automatically connect to wifi on the new installation.
 
 3. Configure the system by setting up the `fstab` (file system table). This step is critical to get correct, and *very* easy to mess up! This file is super important as it automates the filesystem mounting at bootup. If it’s wrong, your USB won’t boot! Run `genfstab -U /mnt >> /mnt/etc/fstab` to generate a template fstab in `/mnt/etc/fstab`, then modify the `fstab` file to use either UUID, PARTUUID, or PARTLABEL. By default, it will likely use the `/dev/sdX` identifiers, but these are not persistent over reboots. I chose to replace them with partition labels as they are easier to type than the Universally Unique IDentifiers. To determine the UUID, PARTUUID, and PARTLABEL's of the different partitions, run `blkid /dev/sdx*`. This will run the `blkid` on all of your USB partitions, which prints out attributes of a block device, including UUID’s, PARTUUID’s, and PARTLABEL’s, if applicable. **TODO ADD EXAMPLE fstab HERE**
 
