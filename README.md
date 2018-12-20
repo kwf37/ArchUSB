@@ -133,20 +133,16 @@ If all went well, you should see an arch terminal on bootup! It should not be in
 
 ### Part 5: Customize Arch
 **TODO**
+## Connecting to Wifi (Using NetworkManager)
+In order to connect to wifi and save configurations, you will need a network manager. Various network managers can be compared [here](https://wiki.archlinux.org/index.php/Network_configuration#Network_managers). I chose to go with NetworkManager, and have documented some basic setup here.
 
-## Steps from linux
-* First partition the disk
-* Make a temporary directory /tmp
-* Download boostrap image with wget into tmp, with a command like
-`wget mirrors.rit.edu/archlinux/iso/2018.07.01/archlinux-bootstrap-2018.07.01-x86_64.tar.gz`.*
-* Extract using `tar -xzf <filename>`
-* cd /tmp/root.x86_64
-* Prepare the chroot and chroot to root.x86_64
-* run `pacman-key --init` and `pacman-key --populate-archlinux`
-* enable a mirror by editing /tmp/root.x86_64/etc/pacman.d/mirrorlist and uncommenting a mirror
-* refresh packages usinh pacman -Syyu
-* install packages you intend to use
-* Make filesystems and mount them
+A good first step on the new installation is to configure NetworkManager and connect to wifi. This assumes it was one of the packages installed in Part 3 Step 2.
+
+1. Run `systemctl enable --now NetworkManager.service`. Systemd is the core system/service manager for Arch linux, and its commands can be run with `systemctl`. `systemctl enable --now <service>` adds a service to the services run at bootup, and the `--now` flag also starts it immediately. By calling this on the NetworkManager service, we ensure that the nm (short for NetowrkManager) daemon runs at bootup. The [systemd page](https://wiki.archlinux.org/index.php/systemd) on the Arch wiki is worth keeping handy.
+2. Try out the network manager client by running `nmcli device wifi list`. This should list available wifi networks in nice colored font.
+3. Try connecting to wifi using `nmcli device wifi connect <SSID> password <password>`.
+4. Once successfully connected, your configuration should automatically be saved and your computer will try to connect to it on bootup! Take a dive into the extra features of NetworkManager on [its page on the Arch Wiki](https://wiki.archlinux.org/index.php/NetworkManager). In case you have not noticed already, the Arch wiki is an incredible resource with vast amounts of information on Arch packages and tutorials, so it is worth perusing thoroughly.
+
 
 ## References
 **TODO** reformat the references
