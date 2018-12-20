@@ -171,6 +171,12 @@ Last important link is the [page on firefox](https://wiki.archlinux.org/index.ph
 11. Open up a terminal session, and then in the terminal, open up firefox.
 12. See **TODO SCREENSHOT** for what my session looks like. (Temporarily this is just saved as barebones_desktop, where I have a terminal, GIMP, and firefox open).
 
+### Setting Up Sound (TODO)
+1. Install `alsa-utils`
+2. Run `amixer sset Master unmute`
+3. Run `amixer sset Speaker unmute`
+4. Run `amixer sset Headphone unmute`
+
 ## References
 **TODO** reformat the references
 * https://wiki.archlinux.org/index.php/Installing_Arch_Linux_on_a_USB_key
