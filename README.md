@@ -131,9 +131,9 @@ The last thing to do is install the bootloader, and then we will have a barebone
 
 If all went well, you should see an arch terminal on bootup! It should not be in emergency mode, and it should not be a grub terminal.
 
-### Part 5: Customize Arch
+## After Installation
 **TODO**
-## Connecting to Wifi (Using NetworkManager)
+### Connecting to Wifi (Using NetworkManager)
 In order to connect to wifi and save configurations, you will need a network manager. Various network managers can be compared [here](https://wiki.archlinux.org/index.php/Network_configuration#Network_managers). I chose to go with NetworkManager, and have documented some basic setup here.
 
 A good first step on the new installation is to configure NetworkManager and connect to wifi. This assumes it was one of the packages installed in Part 3 Step 2.
@@ -143,6 +143,33 @@ A good first step on the new installation is to configure NetworkManager and con
 3. Try connecting to wifi using `nmcli device wifi connect <SSID> password <password>`.
 4. Once successfully connected, your configuration should automatically be saved and your computer will try to connect to it on bootup! Take a dive into the extra features of NetworkManager on [its page on the Arch Wiki](https://wiki.archlinux.org/index.php/NetworkManager). In case you have not noticed already, the Arch wiki is an incredible resource with vast amounts of information on Arch packages and tutorials, so it is worth perusing thoroughly.
 
+### Setting up Xorg and Running I3 and Firefox
+Xorg the most common display server, and so in order to run GUI programs in windows, you will need to install Xorg. [This page](https://wiki.archlinux.org/index.php/xorg#Installation) should be your primary reference when working with Xorg and looking for things to optimize and customize.
+
+Since I will be using  i3 window manager for this tutorial, be sure to also read up on [this page](https://wiki.archlinux.org/index.php/i3).
+
+Last important link is the [page on firefox](https://wiki.archlinux.org/index.php/Firefox) on the Arch wiki.
+
+1. Install the whole `xorg` package group. I chose to install the whole package because I have not decided to scrap any of the packages in the group. Read up on [pacman](https://wiki.archlinux.org/index.php/Pacman) if you ever forget how to install packages.
+2. Install the whole `xorg-drivers` package group. I chose to install the whole package group because I intend to run the USB on multiple computers.
+3. Install the `i3` package group. 
+4. Install `firefox`. Default options are fine, but read the wiki page and be sure to pick what you want
+5. Install a terminal emulator. [This page](https://wiki.archlinux.org/index.php/List_of_applications#Terminal_emulators) of the Arch wiki has lots of fun choices. I picked `urxvt` and haven't tried many others, so feel free to pick whichever interests you.
+6. Install `xorg-xinit`. This will let us start up an X server session from our barebones terminal. Read up on it [here](https://wiki.archlinux.org/index.php/Xinit).
+7. Copy the default `.xinitrc` file into your home directory by running `cp /etc/X11/xinit/xinitrc ~/.xinitrc`.
+8. Modify the default `.xinitrc` by replacing
+    ```
+    twm &
+    xclock -gemoetry 50x50-1+1 &
+    xterm -geometry 80x50+494+51 &
+    xterm -geometry 80x20+494-0 &
+    exec xterm -geometry 80x66+0+0 -name login
+    ```
+    with `exec i3`.
+9. Call startx which should start up a plain i3 session.
+10. The i3 config wizard should pop up in the middle of the screen. Read up on i3 and pick whichever configs suit you.
+11. Open up a terminal session, and then in the terminal, open up firefox.
+12. See **TODO SCREENSHOT** for what my session looks like. (Temporarily this is just saved as barebones_desktop, where I have a terminal, GIMP, and firefox open).
 
 ## References
 **TODO** reformat the references
@@ -150,13 +177,5 @@ A good first step on the new installation is to configure NetworkManager and con
 * https://wiki.archlinux.org/index.php/Install_from_existing_Linux
 * https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks
 * https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/dev.html
-
-## Packages to Install
-* vi
-* i3
-* xserver
-* firefox
-* networkmanager
-* wpa_supplicant
 
 
