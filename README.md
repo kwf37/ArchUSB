@@ -5,7 +5,8 @@
 ### Part 0: Setup a Linux Environment
 If you do not already have a running linux environment, you can set up a liveUSB with
 a distro of your choice to be a temporary working environment for the installation. This
-does not have to be Arch Linux. 
+does not have to be Arch Linux. Note that if you do this you need two USBs, one for the liveUSB,
+and one to install Arch on.
 
 I picked Ubuntu because the liveUSB setup has easy-to-follow
 documentation, and it has all of the tools needed for this installation. To make an Ubuntu
