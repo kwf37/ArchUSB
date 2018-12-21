@@ -131,7 +131,13 @@ The last thing to do is install the bootloader, and then we will have a barebone
 
 If all went well, you should see an arch terminal on bootup! It should not be in emergency mode, and it should not be a grub terminal.
 
-## After Installation
+## Post-Installation
+After installation, you are free to customize your linux. Here are two super helpful pages from the Arch Wiki:
+* https://wiki.archlinux.org/index.php/general_recommendations
+* https://wiki.archlinux.org/index.php/list_of_applications
+
+The rest of the section are my notes on the programs I chose and how I customized some of them.
+
 **TODO**
 ### Connecting to Wifi (Using NetworkManager)
 In order to connect to wifi and save configurations, you will need a network manager. Various network managers can be compared [here](https://wiki.archlinux.org/index.php/Network_configuration#Network_managers). I chose to go with NetworkManager, and have documented some basic setup here.
@@ -176,6 +182,25 @@ Last important link is the [page on firefox](https://wiki.archlinux.org/index.ph
 2. Run `amixer sset Master unmute`
 3. Run `amixer sset Speaker unmute`
 4. Run `amixer sset Headphone unmute`
+
+### Power Management (TODO)
+
+### Screen Brightness (TODO)
+
+### Clipboard Manager (TODO)
+
+### Trash/Recycling Manager (TODO)
+
+### File Explorer (TODO)
+
+### System Administration (TODO)
+
+### Customizing i3 (TODO)
+
+### Customizing urxvt (TODO)
+
+### Customizing vim (TODO)
+
 
 ## References
 **TODO** reformat the references
