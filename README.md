@@ -187,6 +187,7 @@ Last important link is the [page on firefox](https://wiki.archlinux.org/index.ph
 ### Power Management (TODO)
 
 ### Screen Brightness (TODO)
+I used [light](https://haikarainen.github.io/light/). I couldn't find the package `light-git` so I used the `light` package on the AUR. Brightness percenetage can be set using `light -S <percent>
 
 ### Clipboard Manager (TODO)
 
