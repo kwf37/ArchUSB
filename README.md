@@ -185,6 +185,14 @@ Last important link is the [page on firefox](https://wiki.archlinux.org/index.ph
 4. Run `amixer sset Headphone unmute`
 
 ### Power Management (TODO)
+I used [tlp](https://wiki.archlinux.org/index.php/TLP). Install with the following steps:
+1. `pacman -S tlp`
+2. `pacman -S tp_smapi`- for Thinkpads
+3. `pacman -S acpi_call` - for Thinkpads
+4. `systemctl enable tlp.service` - enable tlp
+5. `systemctl enable tlp-sleep.service`- enable tlp
+6. `systemctl mask systemd-rfkill.service` - mask systemd service that can conflict with tlp
+7. `systemctl mask systemd-rfkill.socket` - mask systemd service that can conflict with tlp
 
 ### Screen Brightness (TODO)
 I used [light](https://haikarainen.github.io/light/). I couldn't find the package `light-git` so I used the `light` package on the AUR. Brightness percenetage can be set using `light -S <percent>
