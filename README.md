@@ -219,6 +219,16 @@ To use `lightdm`, install the package and enable `lightdm.service`. When migrati
 
 ### Customizing vim (TODO)
 
+## Package/Package Group List (TODO)
+* base
+* base-devel
+* vim
+* i3
+* lightdm
+* alsa-utils
+* midnight commander
+* light
+*
 
 ## References
 **TODO** reformat the references
