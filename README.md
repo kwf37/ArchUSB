@@ -197,6 +197,9 @@ I used [tlp](https://wiki.archlinux.org/index.php/TLP). Install with the followi
 ### Screen Brightness (TODO)
 I used [light](https://haikarainen.github.io/light/). I couldn't find the package `light-git` so I used the `light` package on the AUR. Brightness percenetage can be set using `light -S <percent>
 
+### Image Viewer (TODO)
+I installed [feh](https://wiki.archlinux.org/index.php/Feh#As)
+
 ### Clipboard Manager (TODO)
 
 ### Trash/Recycling Manager (TODO)
