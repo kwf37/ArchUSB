@@ -201,6 +201,9 @@ I used [light](https://haikarainen.github.io/light/). I couldn't find the packag
 I installed [feh](https://wiki.archlinux.org/index.php/Feh#As)
 You can use it to set the background which autogenerates the script file `~/.fehbg` which can be run to set the background you set it to. It can be edited to change your wallpaper settings and added to your `.xinitrc` file to run on xserver startup.
 
+### Display Manager
+To use `lightdm`, install the package and enable `lightdm.service`. When migrating from `.xinit`, copy over your `.xinitrc` script to a `~/.xprofile` file, which will be run automiatcally by lightdm's shell wrapper script, run at login. Restsart, and you should see a very minimal login screen that you can log into.
+
 ### Clipboard Manager (TODO)
 
 ### Trash/Recycling Manager (TODO)
@@ -212,6 +215,7 @@ You can use it to set the background which autogenerates the script file `~/.feh
 ### Customizing i3 (TODO)
 
 ### Customizing urxvt (TODO)
+`urxvt` can be customized via command line arguments or an X resources file. To use the X resources file, install `xorg-xrdb`.
 
 ### Customizing vim (TODO)
 
