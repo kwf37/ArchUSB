@@ -199,6 +199,7 @@ I used [light](https://haikarainen.github.io/light/). I couldn't find the packag
 
 ### Image Viewer (TODO)
 I installed [feh](https://wiki.archlinux.org/index.php/Feh#As)
+You can use it to set the background which autogenerates the script file `~/.fehbg` which can be run to set the background you set it to. It can be edited to change your wallpaper settings and added to your `.xinitrc` file to run on xserver startup.
 
 ### Clipboard Manager (TODO)
 
