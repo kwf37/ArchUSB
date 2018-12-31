@@ -211,13 +211,16 @@ To use `lightdm`, install the package and enable `lightdm.service`. When migrati
 ### File Explorer (TODO)
 
 ### System Administration (TODO)
+Document how to add users, talk about groups, and mention sudoers file
 
 ### Customizing i3 (TODO)
 
 ### Customizing urxvt (TODO)
-`urxvt` can be customized via command line arguments or an X resources file. To use the X resources file, install `xorg-xrdb`.
+`urxvt` can be customized via command line arguments or an X resources file. To use the X resources file, install `xorg-xrdb`. Mention that there are resources for making nice dotfiles.
 
 ### Customizing vim (TODO)
+
+### Installing Arch User Repository (AUR) (TODO)
 
 ## Package/Package Group List (TODO)
 * base
